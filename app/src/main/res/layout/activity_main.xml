@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <Button
+        android:id="@+id/gp_game_btn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="24dp"
+        android:text="게임시작"
+        android:textSize="19sp"
+        android:onClick="press_game_start_btn"
+        app:layout_constraintBottom_toTopOf="@+id/go_store_btn"
+        app:layout_constraintEnd_toEndOf="@+id/go_store_btn"
+        app:layout_constraintStart_toStartOf="@+id/go_store_btn" />
+
+    <Button
+        android:id="@+id/go_store_btn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="press_store_btn"
+        android:text="상점"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/go_community_btn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:text="커뮤니티"
+        android:onClick="press_community_btn"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@+id/go_store_btn"
+        app:layout_constraintStart_toStartOf="@+id/go_store_btn"
+        app:layout_constraintTop_toBottomOf="@+id/go_store_btn" />
+
+    <Button
+        android:id="@+id/go_rank_btn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:text="랭킹"
+        android:onClick="press_ranking_btn"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@+id/go_community_btn"
+        app:layout_constraintStart_toStartOf="@+id/go_community_btn"
+        app:layout_constraintTop_toBottomOf="@+id/go_community_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
