@@ -6,16 +6,171 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:id="@+id/splash_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="로딩중....."
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+<!--    <TextView-->
+<!--        android:id="@+id/splash_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Now Loading....."-->
+<!--        android:fontFamily="@font/open_sans_extrabold"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/colorPrimary"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TableRow
+        android:id="@+id/splash_tr"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/splash_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="N" />
+
+        <TextView
+            android:id="@+id/splash_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="o" />
+
+        <TextView
+            android:id="@+id/splash_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="w" />
+
+        <TextView
+            android:id="@+id/splash_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="L" />
+
+        <TextView
+            android:id="@+id/splash_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="o" />
+
+        <TextView
+            android:id="@+id/splash_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="a" />
+
+        <TextView
+            android:id="@+id/splash_tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="d" />
+
+        <TextView
+            android:id="@+id/splash_tv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="i" />
+
+        <TextView
+            android:id="@+id/splash_tv9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="n" />
+
+        <TextView
+            android:id="@+id/splash_tv10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="g" />
+
+        <TextView
+            android:id="@+id/splash_tv11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="." />
+
+        <TextView
+            android:id="@+id/splash_tv12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="." />
+
+        <TextView
+            android:id="@+id/splash_tv13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp"
+            android:text="." />
+    </TableRow>
+
+    <com.rey.material.widget.ProgressView
+        android:id="@+id/progressView"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_tr"
+        app:pv_autostart="true"
+        app:pv_circular="false"
+        app:pv_progressMode="indeterminate"
+        app:pv_progressStyle="@style/Material.Drawable.LinearProgress_custom" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
