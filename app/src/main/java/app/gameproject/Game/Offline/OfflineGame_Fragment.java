@@ -14,6 +14,6 @@ public class OfflineGame_Fragment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.offline_game__frag);
+        setContentView(R.layout.offline_game_frag);
     }
 }

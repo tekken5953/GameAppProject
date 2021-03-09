@@ -7,53 +7,60 @@
     tools:context=".MainActivity">
 
 
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/gp_game_btn"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="24dp"
-        android:text="게임시작"
-        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/button_pressed"
         android:onClick="press_game_start_btn"
-        app:layout_constraintBottom_toTopOf="@+id/go_store_btn"
-        app:layout_constraintEnd_toEndOf="@+id/go_store_btn"
-        app:layout_constraintStart_toStartOf="@+id/go_store_btn" />
-
-    <Button
-        android:id="@+id/go_store_btn"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="press_store_btn"
-        android:text="상점"
+        android:text="게임시작"
+        android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/go_community_btn"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:text="커뮤니티"
-        android:onClick="press_community_btn"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/go_store_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/button_pressed"
+        android:onClick="press_store_btn"
+        android:text="상점"
+        android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="@+id/go_store_btn"
-        app:layout_constraintStart_toStartOf="@+id/go_store_btn"
-        app:layout_constraintTop_toBottomOf="@+id/go_store_btn" />
+        app:layout_constraintBottom_toBottomOf="@+id/gp_game_btn"
+        app:layout_constraintStart_toEndOf="@+id/gp_game_btn"
+        app:layout_constraintTop_toTopOf="@+id/gp_game_btn" />
 
-    <Button
-        android:id="@+id/go_rank_btn"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:text="랭킹"
-        android:onClick="press_ranking_btn"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/go_community_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_pressed"
+        android:onClick="press_community_btn"
+        android:text="커뮤니티"
+        android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="@+id/go_community_btn"
-        app:layout_constraintStart_toStartOf="@+id/go_community_btn"
-        app:layout_constraintTop_toBottomOf="@+id/go_community_btn" />
+        app:layout_constraintEnd_toEndOf="@+id/gp_game_btn"
+        app:layout_constraintStart_toStartOf="@+id/gp_game_btn"
+        app:layout_constraintTop_toBottomOf="@+id/gp_game_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/go_rank_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/button_pressed"
+        android:onClick="press_ranking_btn"
+        android:text="랭킹"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@+id/go_community_btn"
+        app:layout_constraintEnd_toEndOf="@+id/go_store_btn"
+        app:layout_constraintStart_toEndOf="@+id/gp_game_btn"
+        app:layout_constraintTop_toTopOf="@+id/go_community_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

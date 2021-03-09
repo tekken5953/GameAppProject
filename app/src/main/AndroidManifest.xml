@@ -20,10 +20,10 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MakingCharacter" />
-        <activity android:name=".Game.Start_Game_Activitiy"/>
+        <activity android:name=".Game.Start_Game_Activity"/>
         <activity android:name=".StoreAcitivity"/>
         <activity android:name=".RankingAcitivty"/>
-
+        <activity android:name=".Game.GameMain_Activity"/>
     </application>
 
 </manifest>

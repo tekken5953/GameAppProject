@@ -10,7 +10,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.gameproject.Game.Start_Game_Activitiy;
+import app.gameproject.Game.Start_Game_Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void press_game_start_btn(View view) {
-        Intent intent = new Intent(MainActivity.this, Start_Game_Activitiy.class);
+        Intent intent = new Intent(MainActivity.this, Start_Game_Activity.class);
         startActivity(intent);
         finish();
     }

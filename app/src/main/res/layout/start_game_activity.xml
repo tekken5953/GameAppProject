@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Game.Start_Game_Activitiy">
+    tools:context=".Game.Start_Game_Activity">
 
     <ImageView
         android:id="@+id/start_game_cancel_iv"
@@ -13,9 +13,41 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:onClick="press_cancel_iv"
-        android:src="@drawable/cancel"
+        android:src="@drawable/cancel_false"
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/do_online_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:onClick="press_onlinegame_btn"
+        android:text="온라인\n게임"
+        android:textColor="@color/white"
+        android:background="@drawable/button_pressed"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/do_offline_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="오프라인\n게임"
+        android:textSize="21sp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_pressed"
+        android:gravity="center"
+        android:onClick="press_offlinegame_btn"
+        app:layout_constraintEnd_toEndOf="@+id/do_online_btn"
+        app:layout_constraintStart_toStartOf="@+id/do_online_btn"
+        app:layout_constraintTop_toBottomOf="@+id/do_online_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

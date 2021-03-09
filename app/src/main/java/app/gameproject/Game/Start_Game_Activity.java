@@ -12,7 +12,7 @@ import app.gameproject.MainActivity;
 import app.gameproject.R;
 
 
-public class Start_Game_Activitiy extends AppCompatActivity {
+public class Start_Game_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,19 @@ public class Start_Game_Activitiy extends AppCompatActivity {
     }
 
     public void press_cancel_iv(View view) {
-        Intent intent = new Intent(Start_Game_Activitiy.this, MainActivity.class);
+        Intent intent = new Intent(Start_Game_Activity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void press_onlinegame_btn(View view) {
+        Intent intent = new Intent(Start_Game_Activity.this, GameMain_Activity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void press_offlinegame_btn(View view) {
+        Intent intent = new Intent(Start_Game_Activity.this, GameMain_Activity.class);
         startActivity(intent);
         finish();
     }

@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MakingCharacter">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/making_complete_btn"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="홈으로 가기"
         android:textColor="@color/white"
         android:textSize="19sp"
         android:onClick="press_home"
+        android:background="@drawable/button_pressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
