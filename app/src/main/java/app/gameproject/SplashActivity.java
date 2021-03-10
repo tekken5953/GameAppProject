@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
@@ -39,20 +40,20 @@ public class SplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //Splash TextView Animation
         TextAnimation(binding.splashTv1,100);
-        TextAnimation(binding.splashTv2,400);
-        TextAnimation(binding.splashTv3,600);
-        TextAnimation(binding.splashTv4,200);
-        TextAnimation(binding.splashTv5,700);
-        TextAnimation(binding.splashTv6,300);
-        TextAnimation(binding.splashTv7,1100);
-        TextAnimation(binding.splashTv8,500);
-        TextAnimation(binding.splashTv9,800);
-        TextAnimation(binding.splashTv10,1200);
-        TextAnimation(binding.splashTv11,900);
-        TextAnimation(binding.splashTv12,900);
-        TextAnimation(binding.splashTv13,900);
-
+        TextAnimation(binding.splashTv2,220);
+        TextAnimation(binding.splashTv3,420);
+        TextAnimation(binding.splashTv4,120);
+        TextAnimation(binding.splashTv5,520);
+        TextAnimation(binding.splashTv6,270);
+        TextAnimation(binding.splashTv7,870);
+        TextAnimation(binding.splashTv8,370);
+        TextAnimation(binding.splashTv9,620);
+        TextAnimation(binding.splashTv10,920);
+        TextAnimation(binding.splashTv11,670);
+        TextAnimation(binding.splashTv12,720);
+        TextAnimation(binding.splashTv13,770);
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
@@ -64,8 +65,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void TextAnimation(TextView tv,int delay) {
 
-        PropertyValuesHolder translation_up = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, 120f);
-        PropertyValuesHolder translation_down = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, -120f);
+        PropertyValuesHolder translation_up = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, 100f);
+        PropertyValuesHolder translation_down = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, -100f);
 
         ObjectAnimator up = ObjectAnimator.ofPropertyValuesHolder(tv,translation_up);
         ObjectAnimator down = ObjectAnimator.ofPropertyValuesHolder(tv,translation_down);
@@ -76,7 +77,8 @@ public class SplashActivity extends AppCompatActivity {
 
         AnimatorSet set = new AnimatorSet();
         set.play(up).after(down);
-        set.setDuration(1300);
+        set.setDuration(1000);
+        set.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.anticipate_overshoot));
         set.start();
 
     }

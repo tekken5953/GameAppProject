@@ -6,26 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-<!--    <TextView-->
-<!--        android:id="@+id/splash_tv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Now Loading....."-->
-<!--        android:fontFamily="@font/open_sans_extrabold"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="@color/colorPrimary"-->
-<!--        android:textSize="34sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <TableRow
         android:id="@+id/splash_tr"
         android:layout_width="match_parent"
         android:layout_height="90dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="bottom|center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,98 +23,98 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="40sp"
             android:text="N" />
 
         <TextView
             android:id="@+id/splash_tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="o" />
 
         <TextView
             android:id="@+id/splash_tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="w" />
 
         <TextView
             android:id="@+id/splash_tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="40sp"
             android:text="L" />
 
         <TextView
             android:id="@+id/splash_tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="o" />
 
         <TextView
             android:id="@+id/splash_tv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="a" />
 
         <TextView
             android:id="@+id/splash_tv7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="d" />
 
         <TextView
             android:id="@+id/splash_tv8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="i" />
 
         <TextView
             android:id="@+id/splash_tv9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="n" />
 
         <TextView
             android:id="@+id/splash_tv10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="g" />
 
         <TextView
@@ -136,35 +123,36 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="." />
 
         <TextView
             android:id="@+id/splash_tv12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="." />
 
         <TextView
             android:id="@+id/splash_tv13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="2dp"
             android:fontFamily="@font/open_sans_extrabold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
+            android:textColor="@color/mainColor"
+            android:textSize="37sp"
             android:text="." />
     </TableRow>
 
     <com.rey.material.widget.ProgressView
         android:id="@+id/progressView"
-        android:layout_width="270dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splash_tr"

@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sideColor"
     tools:context=".LoginActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignIn"
-        android:fontFamily="@font/open_sans_extrabold"
-        android:textColor="@color/white"
-        android:textSize="19sp"
-        android:onClick="press_login"
-        android:background="@drawable/button_pressed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/layout_round_corner_10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="LogIn"
+            android:textSize="40sp"
+            android:textColor="@color/sideColor"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans_extrabold"/>
+
+        <ImageView
+            android:id="@+id/login_id_iv"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_above="@+id/login_edit_pwd"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login_edit_iv"
+            android:src="@drawable/user_id"
+            android:padding="5dp"/>
+
+
+        <EditText
+            android:id="@+id/login_edit_id"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_above="@+id/login_edit_pwd"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/login_id_iv"
+            android:background="@drawable/login_edit_filter"
+            android:paddingStart="15dp"
+            android:hint="User name"
+            android:textColor="@color/mainColor"
+            android:textColorHint="@color/mainColor"
+            android:textStyle="bold"
+            android:lines="1"
+            android:onClick="press_edit_id"/>
+
+        <ImageView
+            android:id="@+id/login_pwd_iv"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_above="@+id/login_remember_cb"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login_edit_iv"
+            android:src="@drawable/password"
+            android:padding="7dp"/>
+
+
+        <EditText
+            android:id="@+id/login_edit_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_above="@+id/login_remember_cb"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/login_pwd_iv"
+            android:layout_toStartOf="@id/login_show_pwd_iv"
+            android:background="@drawable/login_show_pwd_iv"
+            android:paddingLeft="15dp"
+            android:hint="Password"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:textColor="@color/mainColor"
+            android:textColorHint="@color/mainColor"
+            android:textStyle="bold"
+            android:onClick="press_eidt_pwd"/>
+
+        <ImageView
+            android:id="@+id/login_show_pwd_iv"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:background="@drawable/login_edit_filter"
+            android:layout_above="@+id/login_remember_cb"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/noshow_pwd"
+            android:padding="15dp"
+            app:tint="@color/mainColor"/>
+
+        <CheckBox
+            android:id="@+id/login_remember_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Remember?"
+            android:buttonTint="@color/sideColor"
+            android:textColor="@color/black"
+            android:layout_above="@+id/login_signup_btn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_signup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_above="@+id/login_signin_btn"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/login_signup_btn"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:paddingBottom="8dp"
+            android:text="Sign Up"
+            android:onClick="press_sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_signin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_above="@+id/login_find_user_tx"
+            android:background="@drawable/login_signin_btn"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:layout_marginBottom="7dp"
+            android:paddingBottom="8dp"
+            android:text="Sign In"
+            android:onClick="press_login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/login_find_user_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Forget Your ID or Password?"
+            android:layout_marginBottom="150dp"
+            android:textStyle="italic"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+</RelativeLayout>
