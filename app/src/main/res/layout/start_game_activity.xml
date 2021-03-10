@@ -13,7 +13,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:onClick="press_cancel_iv"
-        android:src="@drawable/cancel_false"
+        android:src="@drawable/cancel_iv"
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

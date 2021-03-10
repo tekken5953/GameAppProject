@@ -4,20 +4,14 @@ package app.gameproject;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.InputType;
+import static maes.tech.intentanim.CustomIntent.customType;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.viewpager.widget.PagerAdapter;
-
 import app.gameproject.databinding.LoginActivityBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -65,15 +59,19 @@ public class LoginActivity extends AppCompatActivity {
         }else {
             Intent intent = new Intent(LoginActivity.this, MakingCharacter.class);
             startActivity(intent);
+            customType(LoginActivity.this, "fadein-to-fadeout");
             finish();
         }
     }
 
     public void press_sign_up(View view) {
-        //TODO Create SignUp Dialog
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+        startActivity(intent);
+        customType(LoginActivity.this, "bottom-to-up");
+        finish();
     }
 
-    public void press_eidt_pwd(View view) {
+    public void press_edit_pwd(View view) {
         binding.loginEditPwd.setText("");
         keyboardUp(binding.loginEditPwd);
     }

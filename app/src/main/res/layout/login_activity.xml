@@ -17,11 +17,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/open_sans_extrabold"
             android:text="LogIn"
-            android:textSize="40sp"
             android:textColor="@color/sideColor"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/open_sans_extrabold"/>
+            android:textSize="50sp" />
 
         <ImageView
             android:id="@+id/login_id_iv"
@@ -82,7 +82,7 @@
             android:textColor="@color/mainColor"
             android:textColorHint="@color/mainColor"
             android:textStyle="bold"
-            android:onClick="press_eidt_pwd"/>
+            android:onClick="press_edit_pwd"/>
 
         <ImageView
             android:id="@+id/login_show_pwd_iv"
@@ -136,7 +136,7 @@
             android:layout_above="@+id/login_find_user_tx"
             android:background="@drawable/login_signin_btn"
             android:fontFamily="@font/open_sans_extrabold"
-            android:layout_marginBottom="7dp"
+            android:layout_marginBottom="10dp"
             android:paddingBottom="8dp"
             android:text="Sign In"
             android:onClick="press_login"
@@ -148,12 +148,32 @@
             android:id="@+id/login_find_user_tx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="Forget Your ID or Password?"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="7dp"
+            android:layout_above="@+id/login_visit_page_tx"
             android:textStyle="italic"
             android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/login_visit_page_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Any Problem? Visit us!"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="120dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="italic"
+            android:textColor="@color/sideColor"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="All rights reserved. Copyright(c) is valid"
+            android:layout_margin="7dp"
+            android:textStyle="italic"/>
     </RelativeLayout>
 
 </RelativeLayout>
