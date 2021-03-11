@@ -9,6 +9,7 @@
     <color name="buttonColor"></color>
     <color name="lightGray"></color>
     <color name="darkGray"></color>
+    <color name="none">#00FFFFFF</color>
     <color name="gray">@android:color/darker_gray</color>
     <color name="black">@android:color/black</color>
     <color name="white">@android:color/white</color>

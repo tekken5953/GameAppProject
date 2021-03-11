@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go Main"
-        android:fontFamily="@font/open_sans_extrabold"
+        android:fontFamily="@font/sans_extrabold"
         android:textColor="@color/white"
         android:textSize="19sp"
         android:onClick="press_home"

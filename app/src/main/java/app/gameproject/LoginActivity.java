@@ -1,25 +1,46 @@
 package app.gameproject;
-/** Since 2021-03-05 By LeeJaeYoung
- Board Game Project */
+/**
+ * Since 2021-03-05 By LeeJaeYoung
+ * Board Game Project
+ */
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+
 import static maes.tech.intentanim.CustomIntent.customType;
+
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+import java.util.Objects;
+
+import app.gameproject.Retrofit.MyAPI;
+import app.gameproject.Retrofit.UserItem;
 import app.gameproject.databinding.LoginActivityBinding;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
     LoginActivityBinding binding;
+    MyAPI mMyAPI;
 
     private String show_pwd = "not showing";
     private static final String TAG = "show_pwd";
+    public static final String Retrofit = "retrofit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,38 +50,72 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(view);
 
         EditText pwd = binding.loginEditPwd;
-        Log.e(TAG,show_pwd);
-        Log.e(TAG,pwd.getInputType()+"");
+        Log.d(TAG, show_pwd);
+        Log.d(TAG, pwd.getInputType() + "");
 
         binding.loginShowPwdIv.setOnClickListener(view1 -> {
             if (show_pwd.equals("not showing")) {
                 binding.loginShowPwdIv.setImageResource(R.drawable.show_pwd);
                 pwd.setInputType(144); // Invisible Text Password
                 show_pwd = "showing";
-                Log.e(TAG,show_pwd);
-                Log.e(TAG,pwd.getInputType()+"");
-            }else if (show_pwd.equals("showing")){
+                Log.d(TAG, show_pwd);
+                Log.d(TAG, pwd.getInputType() + "");
+            } else if (show_pwd.equals("showing")) {
                 binding.loginShowPwdIv.setImageResource(R.drawable.noshow_pwd);
                 pwd.setInputType(129); // Visible Text Password
                 show_pwd = "not showing";
-                Log.e(TAG,show_pwd);
-                Log.e(TAG,pwd.getInputType()+"");
+                Log.d(TAG, show_pwd);
+                Log.d(TAG, pwd.getInputType() + "");
             }
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "font/sans_extrabold.ttf"); // font 폴더내에 있는 파일을 typeface로 설정
+            pwd.setTypeface(typeface);
         });
     }
 
     public void press_login(View view) {
+        initMyAPI();
         if (binding.loginEditId.getText().toString().equals("")) {
             Toast.makeText(this, "Input Your ID", Toast.LENGTH_SHORT).show();
             keyboardUp(binding.loginEditId);
-        }else if (binding.loginEditPwd.getText().toString().equals("")) {
+        } else if (binding.loginEditPwd.getText().toString().equals("")) {
             Toast.makeText(this, "Input Your Password", Toast.LENGTH_SHORT).show();
             keyboardUp(binding.loginEditPwd);
-        }else {
-            Intent intent = new Intent(LoginActivity.this, MakingCharacter.class);
-            startActivity(intent);
-            customType(LoginActivity.this, "fadein-to-fadeout");
-            finish();
+        } else if (binding.loginEditPwd.getText().toString().length() < 6) {
+            Toast.makeText(this, "Check Your Password", Toast.LENGTH_SHORT).show();
+            keyboardUp(binding.loginEditPwd);
+        } else {
+            BaseDialog baseDialog = new BaseDialog(LoginActivity.this, R.layout.progressdial);
+            baseDialog.show();
+
+            Call<List<UserItem>> get_user_login = mMyAPI.get_user_by_user_id(binding.loginEditId.getText().toString());
+            get_user_login.enqueue(new Callback<List<UserItem>>() {
+                @Override
+                public void onResponse(@NotNull Call<List<UserItem>> call, @NotNull Response<List<UserItem>> response) {
+                    if (!Objects.requireNonNull(response.body()).toString().equals("[]")) {
+                        if (baseDialog.isShowing()) {
+                            baseDialog.dismiss();
+                        }
+                        Log.d(Retrofit, response.body().toString());
+                        Toast.makeText(LoginActivity.this, "Success to login", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MakingCharacter.class);
+                        startActivity(intent);
+                        customType(LoginActivity.this, "fadein-to-fadeout");
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "You've never signed up. Just do it.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<UserItem>> call, Throwable t) {
+                    if (baseDialog.isShowing()) {
+                        baseDialog.dismiss();
+                    }
+                    Toast.makeText(LoginActivity.this, "Failed to login\nServer is died", Toast.LENGTH_SHORT).show();
+                    Log.e(Retrofit, "Fail msg : " + t.getMessage());
+                }
+            });
+
         }
     }
 
@@ -90,4 +145,28 @@ public class LoginActivity extends AppCompatActivity {
         assert imm != null;
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
+
+    public void press_kakao_login(View view) {
+        //TODO Kakao login service
+        Toast.makeText(this, "Kakao Login Service", Toast.LENGTH_SHORT).show();
+    }
+
+    public void press_missing_data(View view) {
+        Toast.makeText(this, "find user data", Toast.LENGTH_SHORT).show();
+    }
+
+    public void press_visit_website(View view) {
+        Toast.makeText(this, "Linked our website", Toast.LENGTH_SHORT).show();
+    }
+
+    private void initMyAPI() {
+        final String URL = "http://10.0.2.2:8080/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mMyAPI = retrofit.create(MyAPI.class);
+    }
+
 }

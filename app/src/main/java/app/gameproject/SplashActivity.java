@@ -41,19 +41,19 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Splash TextView Animation
-        TextAnimation(binding.splashTv1,100);
-        TextAnimation(binding.splashTv2,220);
-        TextAnimation(binding.splashTv3,420);
-        TextAnimation(binding.splashTv4,120);
-        TextAnimation(binding.splashTv5,520);
-        TextAnimation(binding.splashTv6,270);
-        TextAnimation(binding.splashTv7,870);
-        TextAnimation(binding.splashTv8,370);
-        TextAnimation(binding.splashTv9,620);
-        TextAnimation(binding.splashTv10,920);
-        TextAnimation(binding.splashTv11,670);
-        TextAnimation(binding.splashTv12,720);
-        TextAnimation(binding.splashTv13,770);
+        TextAnimation(binding.splashTv1, 100);
+        TextAnimation(binding.splashTv2, 220);
+        TextAnimation(binding.splashTv3, 420);
+        TextAnimation(binding.splashTv4, 120);
+        TextAnimation(binding.splashTv5, 520);
+        TextAnimation(binding.splashTv6, 270);
+        TextAnimation(binding.splashTv7, 870);
+        TextAnimation(binding.splashTv8, 370);
+        TextAnimation(binding.splashTv9, 620);
+        TextAnimation(binding.splashTv10, 920);
+        TextAnimation(binding.splashTv11, 670);
+        TextAnimation(binding.splashTv12, 720);
+        TextAnimation(binding.splashTv13, 770);
 
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
@@ -63,13 +63,13 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    private void TextAnimation(TextView tv,int delay) {
+    private void TextAnimation(TextView tv, int delay) {
 
         PropertyValuesHolder translation_up = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, 100f);
         PropertyValuesHolder translation_down = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 0f, -100f);
 
-        ObjectAnimator up = ObjectAnimator.ofPropertyValuesHolder(tv,translation_up);
-        ObjectAnimator down = ObjectAnimator.ofPropertyValuesHolder(tv,translation_down);
+        ObjectAnimator up = ObjectAnimator.ofPropertyValuesHolder(tv, translation_up);
+        ObjectAnimator down = ObjectAnimator.ofPropertyValuesHolder(tv, translation_down);
         up.setRepeatCount(ValueAnimator.INFINITE);
         down.setRepeatCount(ValueAnimator.INFINITE);
         up.setStartDelay(delay);

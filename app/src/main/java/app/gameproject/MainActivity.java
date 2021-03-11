@@ -1,7 +1,9 @@
 package app.gameproject;
 
-/** Since 2021-03-05 By LeeJaeYoung
-  Board Game Project **/
+/**
+ * Since 2021-03-05 By LeeJaeYoung
+ * Board Game Project
+ **/
 
 
 import android.content.Intent;

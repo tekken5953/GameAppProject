@@ -10,7 +10,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/layout_round_corner_10dp">
 
         <TextView
@@ -18,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:fontFamily="@font/open_sans_extrabold"
+            android:fontFamily="@font/sans_extrabold"
             android:text="LogIn"
             android:textColor="@color/sideColor"
             android:textSize="50sp" />
@@ -31,8 +33,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/login_edit_iv"
-            android:src="@drawable/user_id"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:src="@drawable/user_id" />
 
 
         <EditText
@@ -45,13 +47,13 @@
             android:layout_marginBottom="10dp"
             android:layout_toEndOf="@+id/login_id_iv"
             android:background="@drawable/login_edit_filter"
-            android:paddingStart="15dp"
             android:hint="User name"
+            android:lines="1"
+            android:onClick="press_edit_id"
+            android:paddingStart="15dp"
             android:textColor="@color/mainColor"
             android:textColorHint="@color/mainColor"
-            android:textStyle="bold"
-            android:lines="1"
-            android:onClick="press_edit_id"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/login_pwd_iv"
@@ -61,8 +63,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/login_edit_iv"
-            android:src="@drawable/password"
-            android:padding="7dp"/>
+            android:padding="7dp"
+            android:src="@drawable/password" />
 
 
         <EditText
@@ -72,56 +74,56 @@
             android:layout_above="@+id/login_remember_cb"
             android:layout_marginStart="2dp"
             android:layout_marginBottom="10dp"
-            android:layout_toEndOf="@+id/login_pwd_iv"
             android:layout_toStartOf="@id/login_show_pwd_iv"
+            android:layout_toEndOf="@+id/login_pwd_iv"
             android:background="@drawable/login_show_pwd_iv"
-            android:paddingLeft="15dp"
             android:hint="Password"
-            android:lines="1"
             android:inputType="textPassword"
+            android:lines="1"
+            android:onClick="press_edit_pwd"
+            android:paddingLeft="15dp"
             android:textColor="@color/mainColor"
             android:textColorHint="@color/mainColor"
-            android:textStyle="bold"
-            android:onClick="press_edit_pwd"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/login_show_pwd_iv"
             android:layout_width="55dp"
             android:layout_height="65dp"
-            android:background="@drawable/login_edit_filter"
             android:layout_above="@+id/login_remember_cb"
-            android:layout_marginEnd="24dp"
             android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/noshow_pwd"
+            android:background="@drawable/login_edit_filter"
             android:padding="15dp"
-            app:tint="@color/mainColor"/>
+            android:src="@drawable/noshow_pwd"
+            app:tint="@color/mainColor" />
 
         <CheckBox
             android:id="@+id/login_remember_cb"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Remember?"
-            android:buttonTint="@color/sideColor"
-            android:textColor="@color/black"
             android:layout_above="@+id/login_signup_btn"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/sideColor"
+            android:text="Remember?"
+            android:textColor="@color/sideColor" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login_signup_btn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_above="@+id/login_signin_btn"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/login_signup_btn"
-            android:fontFamily="@font/open_sans_extrabold"
+            android:fontFamily="@font/sans_extrabold"
+            android:onClick="press_sign_up"
             android:paddingBottom="8dp"
             android:text="Sign Up"
-            android:onClick="press_sign_up"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="22sp" />
@@ -130,50 +132,64 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login_signin_btn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/login_kakao_btn"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_above="@+id/login_find_user_tx"
-            android:background="@drawable/login_signin_btn"
-            android:fontFamily="@font/open_sans_extrabold"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/login_signin_btn"
+            android:fontFamily="@font/sans_extrabold"
+            android:onClick="press_login"
             android:paddingBottom="8dp"
             android:text="Sign In"
-            android:onClick="press_login"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="22sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_kakao_btn"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_above="@+id/login_find_user_tx"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/kakao_login"
+            android:onClick="press_kakao_login"
+            android:paddingBottom="8dp"/>
 
         <TextView
             android:id="@+id/login_find_user_tx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Forget Your ID or Password?"
-            android:layout_marginBottom="7dp"
             android:layout_above="@+id/login_visit_page_tx"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dp"
+            android:text="Forget Your ID or Password?"
+            android:textColor="@color/black"
             android:textStyle="italic"
-            android:textColor="@color/black"/>
+            android:onClick="press_missing_data"/>
 
         <TextView
             android:id="@+id/login_visit_page_tx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Any Problem? Visit us!"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="120dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="80dp"
+            android:text="Any Problem? Visit us!"
+            android:textColor="@color/sideColor"
             android:textStyle="italic"
-            android:textColor="@color/sideColor"/>
+            android:onClick="press_visit_website"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
             android:text="All rights reserved. Copyright(c) is valid"
-            android:layout_margin="7dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
     </RelativeLayout>
 
 </RelativeLayout>
