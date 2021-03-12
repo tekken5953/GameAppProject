@@ -8,42 +8,63 @@ package app.gameproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.gameproject.Game.Start_Game_Activity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import app.gameproject.Game.Start_Game_Activity;
+import app.gameproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View v = binding.getRoot();
+        setContentView(v);
 
-    public void press_ranking_btn(View view) {
-        Intent intent = new Intent(MainActivity.this, RankingAcitivty.class);
-        startActivity(intent);
-        finish();
-    }
+        BottomNavigationView bottomNavigationView = binding.bottomnavigationView;
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
-    public void press_community_btn(View view) {
-        Intent intent = new Intent(MainActivity.this, CommunityActivity.class);
-        startActivity(intent);
-        finish();
-    }
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.bottom_community :
+                        Intent intent_community = new Intent(MainActivity.this, CommunityActivity.class);
+                        startActivity(intent_community);
+                        finish();
+                        break;
+                    case R.id.bottom_store :
+                        Intent intent_store = new Intent(MainActivity.this, StoreAcitivity.class);
+                        startActivity(intent_store);
+                        finish();
+                        break;
+                    case R.id.bottom_rank:
+                        Intent intent_ranking = new Intent(MainActivity.this, RankingAcitivty.class);
+                        startActivity(intent_ranking);
+                        finish();
+                        break;
+                }
+                return true;
+            }
+        });
 
-    public void press_store_btn(View view) {
-        Intent intent = new Intent(MainActivity.this, StoreAcitivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void press_game_start_btn(View view) {
-        Intent intent = new Intent(MainActivity.this, Start_Game_Activity.class);
-        startActivity(intent);
-        finish();
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Start_Game_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
