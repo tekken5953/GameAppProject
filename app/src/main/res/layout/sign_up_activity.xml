@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sideColor"
+    tools:context=".SignUpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
+        android:background="@drawable/signup_layout"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="18dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="press_sign_up_cancel"
+            android:src="@drawable/cancel_iv"
+            app:tint="@color/sideColor" />
+
+        <TextView
+            android:id="@+id/signup_main_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:text="Sign Up"
+            android:textColor="@color/sideColor"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/signup_name_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_main_tx"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:text="Name"
+            android:textColor="@color/sideColor"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/signup_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/signup_name_tx"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sign_up_et_background"
+            android:padding="10dp"
+            android:textColor="@color/sideColor" />
+
+
+        <TextView
+            android:id="@+id/signup_id_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_name_et"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:text="Id"
+            android:textColor="@color/sideColor"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/signup_id_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/signup_id_tx"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sign_up_et_background"
+            android:padding="10dp"
+            android:textColor="@color/sideColor" />
+
+        <TextView
+            android:id="@+id/signup_password_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_id_et"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:text="Password (6 or more characters)"
+            android:textColor="@color/sideColor"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/signup_password_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/signup_password_tx"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sign_up_et_background"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/sideColor" />
+
+        <TextView
+            android:id="@+id/signup_repeat_password_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup_password_et"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:text="Repeat Password"
+            android:textColor="@color/sideColor"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/signup_repeat_password_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/signup_repeat_password_tx"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/sign_up_et_background"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/sideColor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/login_signin_btn"
+            android:drawableLeft="@drawable/lock"
+            android:drawablePadding="-20dp"
+            android:fontFamily="@font/sans_extrabold"
+            android:gravity="center"
+            android:onClick="press_sign_up_ok"
+            android:paddingStart="15dp"
+            android:paddingBottom="5dp"
+            android:text="Create Account !"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

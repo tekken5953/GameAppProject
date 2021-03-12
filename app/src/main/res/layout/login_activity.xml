@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/sans_extrabold"
             android:text="LogIn"
             android:textColor="@color/sideColor"
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="75dp"
             android:text="Any Problem? Visit us!"
             android:textColor="@color/sideColor"
             android:textStyle="italic"
@@ -187,8 +187,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_margin="8dp"
-            android:text="All rights reserved. Copyright(c) is valid"
+            android:text="All rights reserved. Copyright(c) is valid."
             android:textStyle="italic" />
     </RelativeLayout>
 

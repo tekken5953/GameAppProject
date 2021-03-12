@@ -6,24 +6,17 @@ package app.gameproject;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-
 import static maes.tech.intentanim.CustomIntent.customType;
-
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 import java.util.Objects;
-
 import app.gameproject.Retrofit.MyAPI;
 import app.gameproject.Retrofit.UserItem;
 import app.gameproject.databinding.LoginActivityBinding;
@@ -49,26 +42,25 @@ public class LoginActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        EditText pwd = binding.loginEditPwd;
         Log.d(TAG, show_pwd);
-        Log.d(TAG, pwd.getInputType() + "");
+        Log.d(TAG, binding.loginEditPwd.getInputType() + "");
 
         binding.loginShowPwdIv.setOnClickListener(view1 -> {
+
             if (show_pwd.equals("not showing")) {
                 binding.loginShowPwdIv.setImageResource(R.drawable.show_pwd);
-                pwd.setInputType(144); // Invisible Text Password
+                binding.loginEditPwd.setInputType(144); // Invisible Text Password
                 show_pwd = "showing";
                 Log.d(TAG, show_pwd);
-                Log.d(TAG, pwd.getInputType() + "");
+                Log.d(TAG, binding.loginEditPwd.getInputType() + "");
+
             } else if (show_pwd.equals("showing")) {
                 binding.loginShowPwdIv.setImageResource(R.drawable.noshow_pwd);
-                pwd.setInputType(129); // Visible Text Password
+                binding.loginEditPwd.setInputType(129); // Visible Text Password
                 show_pwd = "not showing";
                 Log.d(TAG, show_pwd);
-                Log.d(TAG, pwd.getInputType() + "");
+                Log.d(TAG, binding.loginEditPwd.getInputType() + "");
             }
-            Typeface typeface = Typeface.createFromAsset(getAssets(), "font/sans_extrabold.ttf"); // font 폴더내에 있는 파일을 typeface로 설정
-            pwd.setTypeface(typeface);
         });
     }
 
@@ -127,12 +119,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void press_edit_pwd(View view) {
-        binding.loginEditPwd.setText("");
         keyboardUp(binding.loginEditPwd);
     }
 
     public void press_edit_id(View view) {
-        binding.loginEditId.setText("");
         keyboardUp(binding.loginEditId);
     }
 
