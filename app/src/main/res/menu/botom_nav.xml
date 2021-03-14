@@ -6,8 +6,8 @@
         android:title="@null"/>
 
     <item
-        android:id="@+id/bottom_community"
-        android:icon="@drawable/home_community"
+        android:id="@+id/bottom_rank"
+        android:icon="@drawable/home_rank"
         android:title="@null"/>
 
     <item
@@ -15,13 +15,13 @@
         android:title=""/>
 
     <item
-        android:id="@+id/bottom_rank"
-        android:icon="@drawable/home_rank"
+        android:id="@+id/bottom_store"
+        android:icon="@drawable/home_store"
         android:title="@null"/>
 
     <item
-        android:id="@+id/bottom_store"
-        android:icon="@drawable/home_store"
+        android:id="@+id/bottom_user"
+        android:icon="@drawable/home_user"
         android:title="@null"/>
 
 

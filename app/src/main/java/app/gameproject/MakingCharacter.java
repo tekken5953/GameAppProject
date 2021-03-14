@@ -17,7 +17,7 @@ public class MakingCharacter extends AppCompatActivity {
     }
 
     public void press_home(View view) {
-        Intent intent = new Intent(MakingCharacter.this, MainActivity.class);
+        Intent intent = new Intent(MakingCharacter.this, MainFragment.class);
         startActivity(intent);
         finish();
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RankingAcitivty">
+    tools:context=".RankingFragment">
 
     <ImageView
         android:id="@+id/ranking_cancel_iv"

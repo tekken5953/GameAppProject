@@ -64,8 +64,8 @@ public class SignUpActivity extends AppCompatActivity {
             keyboardUp(pwd);
         } else {
 
-            BaseDialog baseDialog = new BaseDialog(SignUpActivity.this, R.layout.progressdial);
-            baseDialog.show();
+            ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this, R.layout.progressdial);
+            progressDialog.show();
 
             initMyAPI(); // initial connect server
 
@@ -83,8 +83,8 @@ public class SignUpActivity extends AppCompatActivity {
                         post_user.enqueue(new Callback<UserItem>() { // post here
                             @Override
                             public void onResponse(@NotNull Call<UserItem> call, @NotNull Response<UserItem> response) {
-                                if (baseDialog.isShowing()) {
-                                    baseDialog.dismiss();
+                                if (progressDialog.isShowing()) {
+                                    progressDialog.dismiss();
                                 }
                                 if (response.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Complete create your Account", Toast.LENGTH_SHORT).show();
@@ -100,8 +100,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                             @Override
                             public void onFailure(@NotNull Call<UserItem> call, @NotNull Throwable t) {
-                                if (baseDialog.isShowing()) {
-                                    baseDialog.dismiss();
+                                if (progressDialog.isShowing()) {
+                                    progressDialog.dismiss();
                                 }
                                 Log.d(Retrofit, "Fail msg : " + t.getMessage());
                                 Toast.makeText(getApplicationContext(), "Complete create your Account", Toast.LENGTH_SHORT).show();
@@ -118,8 +118,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<UserItem>> call, Throwable t) {
-                    if (baseDialog.isShowing()) {
-                        baseDialog.dismiss();
+                    if (progressDialog.isShowing()) {
+                        progressDialog.dismiss();
                     }
                     Toast.makeText(SignUpActivity.this, "Failed to sign up\nplease restart app", Toast.LENGTH_SHORT).show();
                     Log.e(Retrofit, "Fail msg : " + t.getMessage());

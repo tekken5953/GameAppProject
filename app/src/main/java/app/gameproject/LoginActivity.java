@@ -76,20 +76,20 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Check Your Password", Toast.LENGTH_SHORT).show();
             keyboardUp(binding.loginEditPwd);
         } else {
-            BaseDialog baseDialog = new BaseDialog(LoginActivity.this, R.layout.progressdial);
-            baseDialog.show();
+            ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this, R.layout.progressdial);
+            progressDialog.show();
 
             Call<List<UserItem>> get_user_login = mMyAPI.get_user_by_user_id(binding.loginEditId.getText().toString());
             get_user_login.enqueue(new Callback<List<UserItem>>() {
                 @Override
                 public void onResponse(@NotNull Call<List<UserItem>> call, @NotNull Response<List<UserItem>> response) {
                     if (!Objects.requireNonNull(response.body()).toString().equals("[]")) {
-                        if (baseDialog.isShowing()) {
-                            baseDialog.dismiss();
+                        if (progressDialog.isShowing()) {
+                            progressDialog.dismiss();
                         }
                         Log.d(Retrofit, response.body().toString());
                         Toast.makeText(LoginActivity.this, "Success to login", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, MakingCharacter.class);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         customType(LoginActivity.this, "fadein-to-fadeout");
                         finish();
@@ -100,8 +100,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<List<UserItem>> call, Throwable t) {
-                    if (baseDialog.isShowing()) {
-                        baseDialog.dismiss();
+                    if (progressDialog.isShowing()) {
+                        progressDialog.dismiss();
                     }
                     Toast.makeText(LoginActivity.this, "Failed to login\nServer is died", Toast.LENGTH_SHORT).show();
                     Log.e(Retrofit, "Fail msg : " + t.getMessage());

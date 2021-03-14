@@ -8,10 +8,10 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class BaseDialog extends Dialog {
+public class ProgressDialog extends Dialog {
     protected Activity mContext;
 
-    public BaseDialog(Activity context, int layoutId) {
+    public ProgressDialog(Activity context, int layoutId) {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(layoutId);

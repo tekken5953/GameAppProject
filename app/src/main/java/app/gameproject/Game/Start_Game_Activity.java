@@ -8,7 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.gameproject.MainActivity;
+import app.gameproject.MainFragment;
 import app.gameproject.R;
 
 
@@ -21,7 +21,7 @@ public class Start_Game_Activity extends AppCompatActivity {
     }
 
     public void press_cancel_iv(View view) {
-        Intent intent = new Intent(Start_Game_Activity.this, MainActivity.class);
+        Intent intent = new Intent(Start_Game_Activity.this, MainFragment.class);
         startActivity(intent);
         finish();
     }
