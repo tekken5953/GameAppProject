@@ -2,6 +2,7 @@ package app.gameproject.Retrofit;
 
 //회원가입시 Request 되는 UserInfo
 public class UserItem {
+
     private String name;  // 이름
     private String user_id; // 아이디
     private String pwd; // 비밀번호

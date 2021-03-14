@@ -35,7 +35,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:menu="@menu/botom_nav"
+                app:itemIconSize="28dp"
                 app:itemIconTint="@color/sideColor"
+                app:itemRippleColor="@null"
                 android:layout_marginEnd="16dp"
                 app:backgroundTint="#FFFFFF"/>
 
@@ -49,6 +51,7 @@
             android:src="@drawable/home_game"
             app:backgroundTint="@color/mainColor"
             app:fabCustomSize="70dp"
+            app:fab_iconSize="40dp"
             app:layout_anchor="@id/bottomAppbar"
             app:tint="@color/sideColor" />
 
