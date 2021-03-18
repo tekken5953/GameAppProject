@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/game_create_title_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"
+        android:text="게임 생성"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/game_create_id_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_create_title_tx"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="게임 아이디(Long) : "
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/game_create_id_et"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/game_create_title_tx"
+        android:gravity="center"
+        android:background="@drawable/boundary"
+        android:layout_marginLeft="25dp"
+        android:textSize="14sp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/game_create_id_tx"/>
+
+    <TextView
+        android:id="@+id/game_create_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_create_id_tx"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="게임 이름(String) : "
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/game_create_name_et"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/game_create_id_et"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:background="@drawable/boundary"
+        android:layout_toRightOf="@+id/game_create_id_tx"/>
+
+    <TextView
+        android:id="@+id/game_create_on_off_tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_create_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="온 / 오프(온 : on, 오프 : off) : "
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/game_create_on_off_et"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/game_create_name_et"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/boundary"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/game_create_on_off_tx"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/game_create_on_off_et"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/game_create_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffff00"
+            android:text="Apply"
+            android:textStyle="bold"
+            android:textColor="@color/blue" />
+
+        <Button
+            android:id="@+id/game_create_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:background="#00ffff00"
+            android:text="cancel"
+            android:textStyle="bold"
+            android:textColor="@color/blue" />
+    </TableRow>
+</RelativeLayout>
