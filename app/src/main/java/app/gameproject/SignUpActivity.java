@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Objects;
 import app.gameproject.Retrofit.MyAPI;
+import app.gameproject.Retrofit.NullOnEmptyConverterFactory;
 import app.gameproject.Retrofit.UserItem;
 import app.gameproject.databinding.SignUpActivityBinding;
 import retrofit2.Call;
@@ -158,6 +159,7 @@ public class SignUpActivity extends AppCompatActivity {
         final String URL = "http://10.0.2.2:8080/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
+                .addConverterFactory(new NullOnEmptyConverterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

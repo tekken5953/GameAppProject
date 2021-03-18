@@ -17,7 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Objects;
+
+import app.gameproject.Admin.GameManager;
 import app.gameproject.Retrofit.MyAPI;
+import app.gameproject.Retrofit.NullOnEmptyConverterFactory;
 import app.gameproject.Retrofit.UserItem;
 import app.gameproject.databinding.LoginActivityBinding;
 import retrofit2.Call;
@@ -66,7 +69,12 @@ public class LoginActivity extends AppCompatActivity {
 
     public void press_login(View view) {
         initMyAPI();
-        if (binding.loginEditId.getText().toString().equals("")) {
+        if (binding.loginEditId.getText().toString().equals("admin") && binding.loginEditPwd.getText().toString().equals("admin")) {
+            Intent intent = new Intent(LoginActivity.this, GameManager.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(this, "Login as an admin", Toast.LENGTH_SHORT).show();
+        } else if (binding.loginEditId.getText().toString().equals("")) {
             Toast.makeText(this, "Input Your ID", Toast.LENGTH_SHORT).show();
             keyboardUp(binding.loginEditId);
         } else if (binding.loginEditPwd.getText().toString().equals("")) {
@@ -93,6 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         customType(LoginActivity.this, "fadein-to-fadeout");
                         finish();
+
                     } else {
                         Toast.makeText(LoginActivity.this, "You've never signed up. Just do it.", Toast.LENGTH_SHORT).show();
                     }
@@ -153,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
         final String URL = "http://10.0.2.2:8080/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
+                .addConverterFactory(new NullOnEmptyConverterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

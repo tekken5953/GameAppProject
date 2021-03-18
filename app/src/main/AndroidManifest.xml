@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameAppProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Admin.GameManager"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

@@ -27,7 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    //뷰 바인딩
+    //View Binding
     buildFeatures {
         viewBinding = true
     }
