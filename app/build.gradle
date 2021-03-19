@@ -57,4 +57,7 @@ dependencies {
     //Intent Animation
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
 
+    //ViewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+
 }

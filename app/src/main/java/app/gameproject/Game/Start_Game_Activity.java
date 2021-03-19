@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import app.gameproject.Game.Offline.OfflineGameListActivity;
+import app.gameproject.Game.Online.OnlineGameListActivity;
 import app.gameproject.MainActivity;
 import app.gameproject.R;
 import app.gameproject.ViewTouchListener;
@@ -57,13 +59,13 @@ public class Start_Game_Activity extends AppCompatActivity {
     }
 
     public void press_onlinegame_btn(View view) {
-        Intent intent = new Intent(Start_Game_Activity.this, GameMain_Activity.class);
+        Intent intent = new Intent(Start_Game_Activity.this, OnlineGameListActivity.class);
         startActivity(intent);
         finish();
     }
 
     public void press_offlinegame_btn(View view) {
-        Intent intent = new Intent(Start_Game_Activity.this, GameMain_Activity.class);
+        Intent intent = new Intent(Start_Game_Activity.this, OfflineGameListActivity.class);
         startActivity(intent);
         finish();
     }

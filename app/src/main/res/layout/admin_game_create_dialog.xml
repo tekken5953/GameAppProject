@@ -8,11 +8,11 @@
         android:id="@+id/game_create_title_tx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="15dp"
         android:text="게임 생성"
+        android:fontFamily="@font/sans_extrabold"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -24,7 +24,7 @@
         android:layout_below="@+id/game_create_title_tx"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:text="게임 아이디(Long) : "
+        android:text="게임 아이디 (Long) : "
         android:textColor="@color/black" />
 
     <EditText
@@ -46,7 +46,7 @@
         android:layout_below="@+id/game_create_id_tx"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:text="게임 이름(String) : "
+        android:text="게임 이름 (String) : "
         android:textColor="@color/black" />
 
     <EditText
@@ -68,7 +68,7 @@
         android:layout_below="@+id/game_create_name"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:text="온 / 오프(온 : on, 오프 : off) : "
+        android:text="온 : on,  오프 : off : "
         android:textColor="@color/black" />
 
     <EditText
@@ -98,13 +98,13 @@
             android:background="#00ffff00"
             android:text="Apply"
             android:textStyle="bold"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"/>
 
         <Button
             android:id="@+id/game_create_cancel_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="35dp"
             android:background="#00ffff00"
             android:text="cancel"
             android:textStyle="bold"

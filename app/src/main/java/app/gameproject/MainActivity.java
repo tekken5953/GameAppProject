@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import app.gameproject.Game.GameMain_Activity;
 import app.gameproject.Game.Start_Game_Activity;
 import app.gameproject.databinding.MainActivityBinding;
 

@@ -68,7 +68,7 @@ public class GameManager extends AppCompatActivity {
                 post_game.enqueue(new Callback<AdminItem>() {
                     @Override
                     public void onResponse(Call<AdminItem> call, Response<AdminItem> response) {
-                        result_tx.setText("게임 생성 완료!\n");
+                        result_tx.setText("게임 생성 완료!");
                     }
 
                     @Override
@@ -109,26 +109,21 @@ public class GameManager extends AppCompatActivity {
         list.add("id");
         list.add("game_name");
         list.add("on/off");
+        list.add("all");
         spinner.setAdapter(adapter);
         spinner.setSelection(0);
 
+        // Apply Button Click
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // 아이디로 검색
                 if (spinner.getSelectedItemId() == 0) {
                     Call<List<AdminItem>> get_game_by_id = mMyAPI.get_game_by_id(et.getText().toString());
                     get_game_by_id.enqueue(new Callback<List<AdminItem>>() {
                         @Override
                         public void onResponse(Call<List<AdminItem>> call, Response<List<AdminItem>> response) {
-                            List<AdminItem> body = response.body();
-                            StringBuilder a = new StringBuilder();
-                            for (AdminItem item : body) {
-                                a.append("id : ").append(item.getId()).append(" ")
-                                        .append("name : ").append(item.getGame_name()).append(" ")
-                                        .append("on/off : ").append(item.getOn_off()).append(" ")
-                                        .append("\n");
-                            }
-                            result_tx.setText(a.toString());
+                            get_response(response);
                         }
 
                         @Override
@@ -136,20 +131,14 @@ public class GameManager extends AppCompatActivity {
                             result_tx.setText("Error " + t.getMessage());
                         }
                     });
-                } else if (spinner.getSelectedItemId() == 1) {
+                }
+                // 게임명으로 검색
+                else if (spinner.getSelectedItemId() == 1) {
                     Call<List<AdminItem>> get_game_by_name = mMyAPI.get_game_by_game_name(et.getText().toString());
                     get_game_by_name.enqueue(new Callback<List<AdminItem>>() {
                         @Override
                         public void onResponse(Call<List<AdminItem>> call, Response<List<AdminItem>> response) {
-                            List<AdminItem> body = response.body();
-                            StringBuilder a = new StringBuilder();
-                            for (AdminItem item : body) {
-                                a.append("id : ").append(item.getId()).append(" ")
-                                        .append("name : ").append(item.getGame_name()).append(" ")
-                                        .append("on/off : ").append(item.getOn_off()).append(" ")
-                                        .append("\n");
-                            }
-                            result_tx.setText(a.toString());
+                            get_response(response);
                         }
 
                         @Override
@@ -157,20 +146,29 @@ public class GameManager extends AppCompatActivity {
                             result_tx.setText("Error " + t.getMessage());
                         }
                     });
-                } else if (spinner.getSelectedItemId() == 2) {
+                }
+                // 온라인 / 오프라인으로 검색
+                else if (spinner.getSelectedItemId() == 2) {
                     Call<List<AdminItem>> get_game_by_on_off = mMyAPI.get_game_by_on_off(et.getText().toString());
                     get_game_by_on_off.enqueue(new Callback<List<AdminItem>>() {
                         @Override
                         public void onResponse(Call<List<AdminItem>> call, Response<List<AdminItem>> response) {
-                            List<AdminItem> body = response.body();
-                            StringBuilder a = new StringBuilder();
-                            for (AdminItem item : body) {
-                                a.append("id : ").append(item.getId()).append(" ")
-                                        .append("name : ").append(item.getGame_name()).append(" ")
-                                        .append("on/off : ").append(item.getOn_off()).append(" ")
-                                        .append("\n");
-                            }
-                            result_tx.setText(a.toString());
+                            get_response(response);
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<AdminItem>> call, Throwable t) {
+                            result_tx.setText("Error " + t.getMessage());
+                        }
+                    });
+                }
+                // 전체게임 검색
+                else if (spinner.getSelectedItemId() == 3) {
+                    Call<List<AdminItem>> get_game_all = mMyAPI.get_game();
+                    get_game_all.enqueue(new Callback<List<AdminItem>>() {
+                        @Override
+                        public void onResponse(Call<List<AdminItem>> call, Response<List<AdminItem>> response) {
+                            get_response(response);
                         }
 
                         @Override
@@ -183,6 +181,7 @@ public class GameManager extends AppCompatActivity {
             }
         });
 
+        // Cancel Button Click
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,6 +190,20 @@ public class GameManager extends AppCompatActivity {
         });
 
         alertDialog.show();
+    }
+
+    //response 출력
+    public void get_response(Response<List<AdminItem>> response) {
+        List<AdminItem> body = response.body();
+        StringBuilder a = new StringBuilder();
+        for (AdminItem item : body) {
+            a.append("id  :  ").append(item.getId()).append("  ")
+                    .append("name  :  ").append(item.getGame_name()).append("  ")
+                    .append("on/off  :  ").append(item.getOn_off()).append("  ")
+                    .append("\n");
+        }
+        TextView result_tx = findViewById(R.id.admin_game_content_tx);
+        result_tx.setText(a.toString());
     }
 
     // 게임 수정

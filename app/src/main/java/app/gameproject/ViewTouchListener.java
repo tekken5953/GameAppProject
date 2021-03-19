@@ -17,11 +17,11 @@ public class ViewTouchListener {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        imageview.setColorFilter(false_color);
+                        imageview.setColorFilter(true_color);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        imageview.setColorFilter(true_color);
+                        imageview.setColorFilter(false_color);
                         break;
                     }
                 }

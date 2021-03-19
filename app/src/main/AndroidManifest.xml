@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameAppProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Admin.GameManager"></activity>
+        <activity android:name=".Admin.GameManager" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SplashActivity">
@@ -25,7 +25,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MakingCharacter" />
         <activity android:name=".Game.Start_Game_Activity" />
-        <activity android:name=".Game.GameMain_Activity" />
+        <activity android:name=".Game.Online.OnlineGameListActivity"/>
+        <activity android:name=".Game.Offline.OfflineGameListActivity"/>
     </application>
 
 </manifest>
