@@ -57,7 +57,8 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/sign_up_et_background"
             android:padding="10dp"
-            android:textColor="@color/sideColor" />
+            android:textColor="@color/sideColor"
+            android:maxLines="1"/>
 
 
         <TextView
@@ -82,7 +83,8 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/sign_up_et_background"
             android:padding="10dp"
-            android:textColor="@color/sideColor" />
+            android:textColor="@color/sideColor"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/signup_password_tx"

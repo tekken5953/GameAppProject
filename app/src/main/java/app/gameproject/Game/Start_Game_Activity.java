@@ -40,8 +40,7 @@ public class Start_Game_Activity extends AppCompatActivity {
         cancel.setColorFilter(Color.parseColor("#474175"));
         Log.d(TAG_PRESSED,cancel.isPressed()+"");
         ViewTouchListener viewTouchListener = new ViewTouchListener();
-        viewTouchListener.onPressImageView(cancel, Color.parseColor("#474175"),
-                Color.parseColor("#FCF37A"));
+        viewTouchListener.onPressImageView(cancel);
     }
 
     @Override

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +47,7 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameRecyclerVi
 
         holder.id.setText(item.getId());
         holder.name.setText(item.getName());
+        holder.layout.setBackground(item.getImg());
 
     }
 
@@ -57,6 +60,7 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameRecyclerVi
 
        TextView id;
        TextView name;
+       RelativeLayout layout;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +76,7 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameRecyclerVi
 
             id = itemView.findViewById(R.id.game_recycler_item_id);
             name = itemView.findViewById(R.id.game_recycler_item_name);
+            layout = itemView.findViewById(R.id.game_recycler_layout);
         }
     }
 }

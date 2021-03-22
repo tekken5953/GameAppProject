@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,9 +43,11 @@ public class GameManager extends AppCompatActivity {
 
         initMyAPI();
 
-        Button create_add_button = findViewById(R.id.game_create_add_btn);
+        Button create_add_button = findViewById(R.id.admin_game_create);
+        ImageView back = findViewById(R.id.admin_back_iv);
         ViewTouchListener viewTouchListener = new ViewTouchListener();
         viewTouchListener.onPressButton(create_add_button);
+        viewTouchListener.onPressImageView(back);
     }
 
     // 게임 생성
@@ -229,7 +232,8 @@ public class GameManager extends AppCompatActivity {
     }
 
     private void initMyAPI() {
-        final String URL = "http://10.0.2.2:8080/";
+        final String URL = "http://10.0.2.2:8080/"; //AVD
+//        final String URL = "http://localhost:8080/"; //Phone
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(new NullOnEmptyConverterFactory())

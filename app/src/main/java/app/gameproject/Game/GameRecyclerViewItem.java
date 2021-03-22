@@ -2,12 +2,14 @@ package app.gameproject.Game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 public class GameRecyclerViewItem {
 
     private String id;
     private String name;
+    private Drawable img;
 
     public String getId() {
         return id;
@@ -25,8 +27,17 @@ public class GameRecyclerViewItem {
         this.name = name;
     }
 
-    public GameRecyclerViewItem(String id, String name) {
+    public Drawable getImg() {
+        return img;
+    }
+
+    public void setImg(Drawable img) {
+        this.img = img;
+    }
+
+    public GameRecyclerViewItem(String id, String name, Drawable img) {
         this.id = id;
         this.name = name;
+        this.img = img;
     }
 }

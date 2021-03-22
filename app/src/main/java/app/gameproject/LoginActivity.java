@@ -159,7 +159,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initMyAPI() {
-        final String URL = "http://10.0.2.2:8080/";
+        final String URL = "http://10.0.2.2:8080/"; //AVD
+//        final String URL = "http://127.0.0.1:8080/"; //Phone
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(new NullOnEmptyConverterFactory())

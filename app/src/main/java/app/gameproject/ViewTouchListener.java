@@ -10,18 +10,20 @@ import android.widget.ImageView;
 public class ViewTouchListener {
 
     //Image View
-    public void onPressImageView(ImageView imageview, int false_color, int true_color) {
+    public void onPressImageView(ImageView imageview) {
         imageview.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v,  MotionEvent motionEvent) {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        imageview.setColorFilter(true_color);
+                        imageview.setScaleX(1.1f);
+                        imageview.setScaleY(1.1f);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        imageview.setColorFilter(false_color);
+                        imageview.setScaleX(1f);
+                        imageview.setScaleY(1f);
                         break;
                     }
                 }
@@ -38,13 +40,13 @@ public class ViewTouchListener {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        v.setScaleX(1.2f);
-                        v.setScaleY(1.2f);
+                        button.setScaleX(1.05f);
+                        button.setScaleY(1.05f);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        v.setScaleX(0);
-                        v.setScaleY(0);
+                        button.setScaleX(1f);
+                        button.setScaleY(1f);
                         break;
                     }
                 }
