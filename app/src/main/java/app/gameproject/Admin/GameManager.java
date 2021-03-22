@@ -24,6 +24,7 @@ import app.gameproject.Retrofit.AdminItem;
 import app.gameproject.Retrofit.MyAPI;
 import app.gameproject.Retrofit.NullOnEmptyConverterFactory;
 import app.gameproject.Retrofit.UserItem;
+import app.gameproject.ViewTouchListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,6 +41,10 @@ public class GameManager extends AppCompatActivity {
         setContentView(R.layout.game_manager);
 
         initMyAPI();
+
+        Button create_add_button = findViewById(R.id.game_create_add_btn);
+        ViewTouchListener viewTouchListener = new ViewTouchListener();
+        viewTouchListener.onPressButton(create_add_button);
     }
 
     // 게임 생성

@@ -31,18 +31,20 @@ public class ViewTouchListener {
     }
 
     //Button
-    public void onPressButton(Button button, int false_color, int true_color) {
+    public void onPressButton(Button button) {
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v,  MotionEvent motionEvent) {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        v.setBackgroundColor(false_color);
+                        v.setScaleX(1.2f);
+                        v.setScaleY(1.2f);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        v.setBackgroundColor(true_color);
+                        v.setScaleX(0);
+                        v.setScaleY(0);
                         break;
                     }
                 }
