@@ -36,6 +36,9 @@ public class SignUpActivity extends AppCompatActivity {
         binding = SignUpActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        ViewTouchListener viewTouchListener = new ViewTouchListener();
+        viewTouchListener.onPressButton(binding.signupApplyBtn);
     }
 
     public void press_sign_up_ok(View view) {

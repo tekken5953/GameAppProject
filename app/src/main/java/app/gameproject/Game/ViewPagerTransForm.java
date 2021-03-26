@@ -38,7 +38,7 @@ public class ViewPagerTransForm implements ViewPager2.PageTransformer {
                     (scaleFactor - MIN_SCALE) /
                             (1 - MIN_SCALE) * (1 - MIN_ALPHA));
 
-        } else { // (1,+Infinity]
+        } else { // [1,+Infinity]
             // This page is way off-screen to the right.
             page.setAlpha(0f);
         }

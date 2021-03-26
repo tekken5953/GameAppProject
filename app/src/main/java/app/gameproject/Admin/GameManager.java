@@ -201,8 +201,7 @@ public class GameManager extends AppCompatActivity {
     }
 
     //response 출력
-    public void get_response(Response<List<AdminItem>> response) {
-        List<AdminItem> body = response.body();
+    public void get_response(Response<List<AdminItem>> response) { List<AdminItem> body = response.body();
         StringBuilder a = new StringBuilder();
         for (AdminItem item : body) {
             a.append("id  :  ").append(item.getId()).append("  ")

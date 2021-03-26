@@ -41,6 +41,8 @@ public class Start_Game_Activity extends AppCompatActivity {
         Log.d(TAG_PRESSED,cancel.isPressed()+"");
         ViewTouchListener viewTouchListener = new ViewTouchListener();
         viewTouchListener.onPressImageView(cancel);
+        viewTouchListener.onPressButton(binding.doOnlineBtn);
+        viewTouchListener.onPressButton(binding.doOfflineBtn);
     }
 
     @Override

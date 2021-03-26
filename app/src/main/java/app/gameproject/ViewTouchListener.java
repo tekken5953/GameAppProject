@@ -17,13 +17,13 @@ public class ViewTouchListener {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        imageview.setScaleX(1.1f);
                         imageview.setScaleY(1.1f);
+                        imageview.setScaleX(1.1f);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        imageview.setScaleX(1f);
                         imageview.setScaleY(1f);
+                        imageview.setScaleX(1f);
                         break;
                     }
                 }
@@ -40,13 +40,13 @@ public class ViewTouchListener {
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN :
                     case MotionEvent.ACTION_MOVE : {
-                        button.setScaleX(1.05f);
                         button.setScaleY(1.05f);
+                        button.setScaleX(1.05f);
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
-                        button.setScaleX(1f);
                         button.setScaleY(1f);
+                        button.setScaleX(1f);
                         break;
                     }
                 }

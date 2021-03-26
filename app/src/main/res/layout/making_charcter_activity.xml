@@ -15,7 +15,7 @@
         android:textColor="@color/white"
         android:textSize="19sp"
         android:onClick="press_home"
-        android:background="@drawable/button_pressed"
+        android:background="@drawable/button_blue_false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

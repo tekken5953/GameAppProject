@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="35dp"
-        android:background="#00FFFFFF"
+        android:background="@drawable/game_viewpager_item"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
